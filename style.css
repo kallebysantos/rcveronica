@@ -1,0 +1,86 @@
+/*Inicialização da página*/
+html, body{
+	/*Define a margem e padding 0 para fazer a limpeza*/
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*Fundo da página*/
+	background: #ccffff;
+}
+
+/*Estrutura do layout*/
+.container{
+	/*Cria um pequeno espaçamento em volta da página*/
+	margin: 20px;
+
+	/*Estrutura*/
+	display: grid;
+	grid-template-columns: 3fr 1fr ; /*Colunas da página será dividida em 3/1*/
+	/*Layout - Organiza os itens nas linhas e colunas*/
+	grid-template-areas: 
+	"header header" 
+	 "main  aside"
+	"footer footer";
+	grid-gap: 5px;
+
+	text-align: justify;
+}
+
+
+.header{
+	grid-area: header;
+	background: #ffccff;
+	text-align: justify;
+	padding: 10px;
+
+}
+
+.main{
+	grid-area: main;
+	background: #ccffcc;
+	padding: 10px;
+
+}
+
+.aside{
+	grid-area: aside;
+	background: #ccccff;
+	padding: 15px;
+}
+
+.footer{
+	grid-area: footer;
+	background: #ffcccc;
+	padding: 10px;
+}
+
+/*-------------------*/
+.header li{
+	display: inline-block;
+}
+
+.header input{
+	color: white;
+	background-color: black;
+}
+
+.header input:hover{
+	color: #F02145;
+	background-color: white;
+}
+
+
+
+@media (max-width: 1000px){
+	.container{
+	margin: 0px auto 0px auto;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	"header" 
+	 "main"  
+	 "aside"
+	"footer";
+}
+}
